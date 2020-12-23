@@ -27,5 +27,18 @@ class SafariCredentials
 	end
 end
 
+# TODO move this to a Module?
+def self.blank_string?(str)
+	return str.nil? || str.strip.empty?
+end
+
+def parse_video_url
+	video_url = ARGV[0]
+	if blank_string? video_url
+		abort("Video URL missing!")
+	end
+	return video_url
+end
+
+parse_video_url
 creds = SafariCredentials.new
-puts "#{creds.username}:#{creds.password}"
