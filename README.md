@@ -4,22 +4,29 @@ Hermes is a video downloader, powered by [youtube-dl](https://github.com/ytdl-or
 
 ## Usage
 
-1. Set up your username and password as environment variables, like this:
+1. Make sure `youtube-dl` is installed, and in your path:
 
 ```
-export SAFARI_EMAIL=juan@mail.com
-export SAFARI_PASSWORD=MyAwesomePass123
+$ which youtube-dl
+/usr/local/bin/youtube-dl
 ```
 
-2. Create a `cookies.json` file, containing all the needed files. To do so, you can use a [tool](http://www.editthiscookie.com/) to download them
+2. Set up your username and password as environment variables, like this:
 
-3. Run Hermes, supplying the course URL, like this:
+```
+$ export SAFARI_EMAIL=juan@mail.com
+$ export SAFARI_PASSWORD=MyAwesomePass123
+```
+
+3. Create a `cookies.json` file, containing all the needed files. To do so, you can use a [tool](http://www.editthiscookie.com/) to download them
+
+4. Run Hermes, supplying the course URL, like this:
 
 ```
 $ node hermes.js https://videos.com/123
 ```
 
-4. You'll see a subdirectory of `output` (named according to the current timestamp) with the course contents
+5. You'll see a subdirectory of `output` (named according to the current timestamp) with the course contents
 
 ## Roadmap
 
