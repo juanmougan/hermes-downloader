@@ -1,0 +1,17 @@
+{
+  "name": "hermes-downloader",
+  "version": "1.0.0",
+  "description": "A tool to download videos from certain websites",
+  "main": "hermes.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Juan Manuel Mougan",
+  "license": "ISC",
+  "dependencies": {
+    "config": "^3.3.3",
+    "fs": "0.0.1-security",
+    "jssoup": "0.0.12",
+    "puppeteer": "^5.5.0"
+  }
+}

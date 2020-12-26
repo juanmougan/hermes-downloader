@@ -1,0 +1,6 @@
+{
+  "safari": {
+    "baseUrl": "https://learning.oreilly.com",
+    "videosClass": "content-ContentSummary-link"
+  }
+}
