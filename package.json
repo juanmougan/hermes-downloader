@@ -2,8 +2,9 @@
   "name": "hermes-downloader",
   "version": "1.0.0",
   "description": "A tool to download videos from certain websites",
-  "main": "hermes.js",
+  "main": "dist/hermes.js",
   "scripts": {
+    "start": "tsc && node dist/hermes.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Juan Manuel Mougan",
@@ -13,5 +14,9 @@
     "fs": "0.0.1-security",
     "jssoup": "0.0.12",
     "puppeteer": "^5.5.0"
+  },
+  "devDependencies": {
+    "tslint": "^6.1.3",
+    "typescript": "^4.1.3"
   }
 }
