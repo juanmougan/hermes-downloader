@@ -2,6 +2,18 @@
 
 Hermes is a video downloader, powered by [youtube-dl](https://github.com/ytdl-org/youtube-dl) to locally backup stuff from educational websites.
 
+### Motivation
+
+Hermes lets you cache locally videos from certain websites that have mobile apps with a questionable offline mode, to watch them afterwards, e.g. during a flight. Please make sure the site's terms and conditions allows you to do this! I've created this as a personal, and educational project (and I've learnt a lot along the way 🙌).
+
+#### The name
+
+Pays homage to the eponymous [Greek god](https://en.wikipedia.org/wiki/Hermes).
+
+#### Useful resources
+
+I've mostly followed [this](https://andrejsabrickis.medium.com/scrapping-the-content-of-single-page-application-spa-with-headless-chrome-and-puppeteer-d040025f752b) great tutorial, plus some Puppeteer and youtube-dl documentation.
+
 ## Usage
 
 1. Make sure `youtube-dl` is installed, and in your path:
