@@ -1,6 +1,7 @@
 {
   "safari": {
     "baseUrl": "https://learning.oreilly.com",
+    "signInLinkClass": "t-sign-in",
     "videosClass": "content-ContentSummary-link"
   }
 }

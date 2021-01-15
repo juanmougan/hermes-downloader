@@ -31,9 +31,19 @@ export class Parser {
   private async collectLinks(body: string): Promise<string[]> {
     const JSSoup = require('jssoup').default
     const bodyTags = new JSSoup(body)
+    this.verifyIsSignedIn(bodyTags)
     const videos = bodyTags.findAll('a', this.videosClass)
     const videosLocalLinks = videos.map(v => v.attrs.href)
     return videosLocalLinks.map(v => this.localLinkToRealLink(v))
+  }
+
+  private verifyIsSignedIn(tags: any) {
+    const signInLink = tags.find('a', this.config.get('safari.signInLinkClass'))
+    if (signInLink) {
+      // Sign in failed, that's why we found the button
+      console.error("Sign in failed, please check your cookies")
+      process.exit(1);
+    }
   }
 
   private localLinkToRealLink(localLink: string): string {
