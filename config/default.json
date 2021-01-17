@@ -3,5 +3,11 @@
     "baseUrl": "https://learning.oreilly.com",
     "signInLinkClass": "t-sign-in",
     "videosClass": "content-ContentSummary-link"
+  },
+  "hermes": {
+    "videosThreshold": 50,
+    "maxDownloadsPerTimeThreshold": 50,
+    "timeThreshold": 120000,
+    "lockDuration": 120000
   }
 }

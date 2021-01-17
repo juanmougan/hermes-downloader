@@ -11,6 +11,6 @@ import { Parser } from './parser'
     await downloader.downloadVideos(links)
   } else {
     console.error("Couldn't retrieve any videos")
-    process.exit(1);
+    process.exit(2);
   }
 })()

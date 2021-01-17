@@ -10,6 +10,8 @@
   "author": "Juan Manuel Mougan",
   "license": "ISC",
   "dependencies": {
+    "@types/config": "0.0.38",
+    "bullmq": "^1.14.0",
     "config": "^3.3.3",
     "fs": "0.0.1-security",
     "jssoup": "0.0.12",
