@@ -3,5 +3,9 @@
     "baseUrl": "https://learning.oreilly.com",
     "signInLinkClass": "t-sign-in",
     "videosClass": "content-ContentSummary-link"
+  },
+  "hermes": {
+    "videosThreshold": 50,
+    "commandOutput": "command_output.sh"
   }
 }
