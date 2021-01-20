@@ -29,7 +29,17 @@ export class Downloader {
     const videoName = `${urlParts[urlParts.length - 1]}.mp4`;
     const output = `${outputDirName}/${videoName}`;
     const command = 'youtube-dl';
-    const args = ['-u', safariEmail, '-p', password, '--output', output, url];
+    const args = [
+      '-u',
+      safariEmail,
+      '-p',
+      password,
+      '--cookies',
+      'cookies.txt',
+      '--output',
+      output,
+      url,
+    ];
 
     return this.execProcess(command, args);
   }
@@ -69,7 +79,7 @@ export class Downloader {
     const urlParts = video.split('/');
     const videoName = `${urlParts[urlParts.length - 1]}.mp4`;
     const output = `${dir}/${videoName}`;
-    const command = `youtube-dl -u ${safariEmail} -p ${password} --verbose --output ${output} ${video}`;
+    const command = `youtube-dl -u ${safariEmail} -p ${password} --verbose --cookies cookies.txt --output ${output} ${video}`;
     console.log('Download: ', command);
     const { exec } = require('child_process');
     exec(command, (error, stdout, stderr) => {
