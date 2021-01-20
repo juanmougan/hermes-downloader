@@ -2,3 +2,4 @@ cookies.json
 output/
 node_modules/
 dist/
+command_output.sh
