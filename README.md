@@ -40,9 +40,22 @@ $ npm start https://videos.com/123
 
 5. You'll see a subdirectory of `output` (named according to the current timestamp) with the course contents
 
+### Batch mode
+
+When downloading a [configurable](config/default.json#L8) batch of files, Hermes will run on batch mode, and will use [BullMQ](https://docs.bullmq.io/) to handle the asynchronous download of all the videos that were previously enqueued.
+
+#### Redis
+
+BullMQ needs Redis to work, so make sure to install it locally. On a Mac, it would be as simple as:
+
+```
+$ brew install redis
+$ redis-server /usr/local/etc/redis.conf
+```
+
 ## Roadmap
 
-1. Support downloading several files, currently crashes when you try to download >400 videos (maybe I need some [job queue](https://docs.bullmq.io/))
+1. Add Docker, so that locally installing Redis is not needed anymore
 
 2. See if any of `youtube-dl`'s options can be tuned, and exposed somehow in Hermes (like network or quality tweaks)
 
@@ -50,4 +63,4 @@ $ npm start https://videos.com/123
 
 4. Add error checks (env vars, cmd params, `youtube-dl` not installed, etc.)
 
-5. Testing
+5. Better separation in components, receive dependencies in the constructor, and add unit tests
