@@ -23,12 +23,7 @@ $ which youtube-dl
 /usr/local/bin/youtube-dl
 ```
 
-2. Set up your username and password as environment variables, like this:
-
-```
-$ export SAFARI_EMAIL=juan@mail.com
-$ export SAFARI_PASSWORD=MyAwesomePass123
-```
+2. Create a `cookies.txt`, containing all the needed cookies (in [Netscape format](http://www.cookiecentral.com/faq/#3.3)). You might want to extract them using any tool, like [this one](https://chrome.google.com/webstore/detail/get-cookiestxt/bgaddhkoddajcdgocldbbfleckgcbcid)
 
 3. Create a `cookies.json` file, containing all the needed files. To do so, you can use a [tool](http://www.editthiscookie.com/) to download them
 
