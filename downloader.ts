@@ -32,6 +32,8 @@ export class Downloader {
       'cookies.txt',
       '--output',
       output,
+      '-f ',
+      'worst',    // TODO parametrize (and make it optional)
       url,
     ];
 

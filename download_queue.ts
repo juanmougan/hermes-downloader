@@ -4,7 +4,8 @@ export class DownloadQueue {
   downloadQueue: Queue<any, any, string>
   scheduler: QueueScheduler
   config: any
-  workers: number
+  jobsCount: number
+  successfulCount: number
   lastJob: boolean
   
   constructor(queueName: string) {
@@ -17,10 +18,11 @@ export class DownloadQueue {
     // somewhere in your deployment so that jobs are put back to the wait status.
     this.scheduler = new QueueScheduler(this.downloadQueue.name);
     this.config = require('config')
+    this.successfulCount = 0
   }
 
   public async addJobs(urls: Array<string>) {
-    this.workers = urls.length
+    this.jobsCount = urls.length
     const queueConfig = {
       attempts: 3,
       backoff: {
@@ -43,17 +45,11 @@ export class DownloadQueue {
       // Log success
       worker.on("completed", async (job: Job, returnValue: string) => {
         console.log(`Completed job (${job.id})`)
-        // If there are no more jobs, exit OK
-        // TODO this is quite hacky, improve
-        const jobsToBeProcessed = await this.downloadQueue.count()
-        if (jobsToBeProcessed === 0) {
-          if (this.lastJob) {
-            // I've finished processing, exit
-            return
-          } else {
-            // Mark that the next sucessful job should be the last one
-            this.lastJob = true
-          }
+        // If I've downloaded all of them, return
+        this.successfulCount++
+        console.log(`Already downloaded ${this.successfulCount} videos`)    // TODO delete
+        if (this.successfulCount === this.jobsCount) {
+          return
         }
       });
     }
